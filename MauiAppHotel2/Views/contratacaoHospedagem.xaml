@@ -15,6 +15,7 @@
             FontSize="50"
             TextColor="{StaticResource DarkGreen}" />
 
+        <!--Quantidade de pessoas-->
         <Frame Padding="10">
             <VerticalStackLayout>
                 <Grid RowDefinitions="Auto, Auto"
@@ -49,15 +50,20 @@
                              Increment="1" />
                 </Grid>
 
+                <!--Escolhas de Suíte-->
+
                 <Label Text="Escolha sua Suíte" 
                        HorizontalOptions="Center"
                        Padding="5"
                        Margin="5"/>
 
                 <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação" 
+                        Title="Selecione sua Acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"
                         HorizontalOptions="Center"
                         Margin="5"/>
+
+                <!--Período da Estadia-->
 
                 <Frame Padding="10"
                        Margin="10">
@@ -72,6 +78,7 @@
                                    Padding="5"
                                    Margin="5"/>
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy" 
                                         Margin="5"/>
                         </HorizontalStackLayout>
@@ -88,11 +95,15 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <Button Text="Avançar" />
+                <!--Botão Avançar-->
+                
+                <Button Text="Avançar" Clicked="Button_Clicked"/>
 
             </VerticalStackLayout>
         </Frame>
 
+        <!--SOBRE-->
+        
         <Label Text="SOBRE"
                FontFamily="Cause"
                FontSize="50"
