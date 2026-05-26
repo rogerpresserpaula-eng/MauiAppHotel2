@@ -8,7 +8,8 @@
 
     <VerticalStackLayout VerticalOptions="CenterAndExpand"
                          HorizontalOptions="Center"
-                         Padding="10">
+                         Padding="10"
+                         Spacing="10">
         <Label 
             Text="Cálculo da Diária" 
             FontFamily="Cause"
@@ -52,28 +53,36 @@
 
                 <!--Escolhas de Suíte-->
 
-                <Label Text="Escolha sua Suíte" 
-                       HorizontalOptions="Center"
-                       Padding="5"
-                       Margin="5"/>
+                <Frame Padding="10" Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="Escolha sua Suíte" 
+                               HorizontalOptions="Center"
+                               Padding="5"
+                               Margin="5"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="{StaticResource DarkGreen}"/>
 
-                <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação"
-                        ItemDisplayBinding="{Binding Descricao}"
-                        HorizontalOptions="Center"
-                        Margin="5"/>
-
+                        <Picker x:Name="pck_quarto"
+                                Title="Selecione sua Acomodação"
+                                ItemDisplayBinding="{Binding Descricao}"
+                                HorizontalOptions="Center"
+                                Margin="5"/>
+                    </VerticalStackLayout>
+                </Frame>
                 <!--Período da Estadia-->
 
-                <Frame Padding="10"
-                       Margin="10">
-                    <VerticalStackLayout>
+                <Frame Padding="10" Margin="10">
+                    <VerticalStackLayout Spacing="10">
                         <Label Text="Período da Estadia" 
                                HorizontalOptions="Center"
                                Padding="5"
-                               Margin="5"/>
+                               Margin="5"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="{StaticResource DarkGreen}"/>
 
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Chek-in:" 
                                    Padding="5"
                                    Margin="5"/>
@@ -83,7 +92,7 @@
                                         Margin="5"/>
                         </HorizontalStackLayout>
 
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Chek-out:" 
                                    Padding="5"
                                    Margin="5"/>
@@ -97,7 +106,9 @@
 
                 <!--Botão Avançar-->
                 
-                <Button Text="Avançar" Clicked="Button_Clicked"/>
+                <Button Text="Avançar" 
+                        HorizontalOptions="Center"
+                        Clicked="Button_Clicked"/>
 
             </VerticalStackLayout>
         </Frame>
